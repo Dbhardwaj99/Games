@@ -86,11 +86,16 @@ while True:
 
     # LEFT
     if ball.xcor() < -390:
-        ball.setx(-390)
+        ball.goto(0,0)
         ball.dx *= -1
 
     # RIGHT
     if ball.xcor() > 390:
-        ball.setx(390)
+        ball.goto(0,0)
         ball.dx *= -1
 
+
+    # PAddle working
+    if (ball.xcor()>340 and ball.xcor()<350)and (ball.ycor()<paddle_B.ycor + 40 and ball.ycor()>paddle_B.ycor()-40):
+        ball.setx(340)
+        ball.dx *= -1
