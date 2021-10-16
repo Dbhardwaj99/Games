@@ -27,7 +27,7 @@ paddle_B.goto(350,0)
 # ball
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("circle")
+ball.shape("square")
 ball.color("red")
 ball.penup()
 ball.goto(0,0)
@@ -96,6 +96,8 @@ while True:
 
 
     # PAddle working
-    if (ball.xcor()>340 and ball.xcor()<350)and (ball.ycor()<paddle_B.ycor + 40 and ball.ycor()>paddle_B.ycor()-40):
-        ball.setx(340)
+    if ball.xcor() < 390 and ball.ycor() < paddle_B.ycor() + 50 and ball.ycor() > paddle_B.ycor() - 50:
+        ball.dx *= -1 
+
+    elif ball.xcor() > 340 and ball.ycor() < paddle_B.ycor() + 50 and ball.ycor() > paddle_B.ycor() - 50:
         ball.dx *= -1
